@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Attendance Management - Manav Sampada</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#005A9C", // Updated primary color as per request
+                        "background-light": "#F0F2F5",
+                        "background-dark": "#101622",
+                        "success": "#28A745",
+                        "warning": "#FFC107",
+                        "danger": "#DC3545",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div id="shared-header-container"></div>
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<div class="flex h-full grow flex-row">
+<!-- SideNavBar -->
+<div class="flex h-full min-h-screen flex-col justify-between bg-white dark:bg-background-dark/50 p-4 border-r border-gray-200 dark:border-gray-700 w-64">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Ravi Kumar's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0Cp_aN3ubJ6lM1vVaa87ZGdQ5U2g9g2cKfV9MerqaNeoN8TeY7ejCsyPdF_8KEZC_LpBFHY1YEi5r9fUq3pQ_ih6AqNHRadhf-6NcMleLqIm7fd8TZcWnqnhtbVIr-suEu30Hf0BL9EoVEJExCy0j6mHk8dvc93vCVJLE6bVTGP4otl412F1BnK4SRG91za-4D3aL1QOAcGzzDli04ZA-N8O3Y3btdRCyB-EW_WygLON_Ga9SsK8hWcxbaFQDZ8_4O_28LTLcfS8");'></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">Ravi Kumar</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Employee ID: 12345</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="employeedashboard.html">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-white" href="attendancemanagement.html">
+<span class="material-symbols-outlined text-primary dark:text-white" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<p class="text-sm font-medium leading-normal">Attendance</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="leaveapplication.html">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200">work_off</span>
+<p class="text-sm font-medium leading-normal">Leave</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200">wallet</span>
+<p class="text-sm font-medium leading-normal">Salary Slip</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200">person</span>
+<p class="text-sm font-medium leading-normal">Profile</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700" href="#">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200">help</span>
+<p class="text-sm font-medium leading-normal">Help &amp; Support</p>
+</a>
+</div>
+<button onclick="location.href='loginpage.html'" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Log Out</span>
+</button>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-1 p-8">
+<div class="max-w-7xl mx-auto">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div class="flex min-w-72 flex-col gap-1">
+<p class="text-gray-900 dark:text-white text-3xl font-bold leading-tight tracking-tight">Attendance Management</p>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Review and manage attendance records for yourself and your team.</p>
+</div>
+<div class="mb-4">
+    <a href="employeedashboard.html" class="text-primary text-sm font-medium">← Back to Dashboard</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm font-medium leading-normal tracking-[0.015em] border border-gray-300 dark:border-gray-600 shadow-sm">
+<span class="truncate">Export Data</span>
+</button>
+</div>
+<!-- SegmentedButtons -->
+<div class="flex w-full mb-6">
+<div class="flex h-10 items-center justify-start rounded-lg bg-gray-200 dark:bg-gray-900 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-6 py-1 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">My Attendance</span>
+<input checked="" class="invisible w-0" name="viewToggle" type="radio" value="My Attendance"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-6 py-1 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-sm has-[:checked]:text-gray-900 dark:has-[:checked]:text-white text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal">
+<span class="truncate">Team Approvals</span>
+<input class="invisible w-0" name="viewToggle" type="radio" value="Team Approvals"/>
+</label>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">Total Hours This Month</p>
+<p class="text-gray-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">128.5</p>
+<p class="text-success text-sm font-medium leading-normal">+2.5% vs last month</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">Days Present</p>
+<p class="text-gray-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">16</p>
+<p class="text-danger text-sm font-medium leading-normal">-1 day vs last month</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">Days Absent</p>
+<p class="text-gray-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">1</p>
+<p class="text-success text-sm font-medium leading-normal">No change</p>
+</div>
+<div class="flex flex-1 flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-600 dark:text-gray-300 text-sm font-medium leading-normal">Leave Taken</p>
+<p class="text-gray-900 dark:text-white tracking-tight text-3xl font-bold leading-tight">3</p>
+<p class="text-success text-sm font-medium leading-normal">1 day less vs last month</p>
+</div>
+</div>
+<!-- Table Section -->
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
+<!-- ToolBar -->
+<div class="flex flex-wrap justify-between items-center gap-4 p-4 border-b border-gray-200 dark:border-gray-700">
+<div class="flex gap-2 items-center">
+<div class="relative w-64">
+<div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-gray-400">search</span>
+</div>
+<input class="block w-full rounded-lg border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 pl-10 h-10 text-sm focus:border-primary focus:ring-primary dark:placeholder-gray-400 dark:text-white" placeholder="Search..." type="text"/>
+</div>
+<button class="flex items-center gap-2 p-2 h-10 rounded-lg text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-sm">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-base">filter_list</span>
+<span>Filter</span>
+</button>
+<button class="flex items-center gap-2 p-2 h-10 rounded-lg text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-sm">
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-base">calendar_today</span>
+<span>This Month</span>
+</button>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal tracking-wide">
+<span class="truncate">Request Correction</span>
+</button>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<tr>
+<th class="px-6 py-3" scope="col">Date</th>
+<th class="px-6 py-3" scope="col">Clock-In</th>
+<th class="px-6 py-3" scope="col">Clock-Out</th>
+<th class="px-6 py-3" scope="col">Total Hours</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3" scope="col"><span class="sr-only">Actions</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Nov 21, 2023</th>
+<td class="px-6 py-4">09:02 AM</td>
+<td class="px-6 py-4">05:58 PM</td>
+<td class="px-6 py-4">8h 56m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-success/10 text-success text-xs font-medium px-2.5 py-0.5 rounded-full">Approved</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">View Details</button>
+</td>
+</tr>
+<tr class="bg-gray-50 dark:bg-gray-900/50 border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Nov 20, 2023</th>
+<td class="px-6 py-4">09:15 AM</td>
+<td class="px-6 py-4">06:05 PM</td>
+<td class="px-6 py-4">8h 50m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-warning/10 text-warning text-xs font-medium px-2.5 py-0.5 rounded-full">Pending</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">View Details</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Nov 19, 2023</th>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">-</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-danger/10 text-danger text-xs font-medium px-2.5 py-0.5 rounded-full">Absent</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">Request Regularization</button>
+</td>
+</tr>
+<tr class="bg-gray-50 dark:bg-gray-900/50 border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Nov 18, 2023</th>
+<td class="px-6 py-4">08:55 AM</td>
+<td class="px-6 py-4">06:01 PM</td>
+<td class="px-6 py-4">9h 06m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-success/10 text-success text-xs font-medium px-2.5 py-0.5 rounded-full">Approved</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">View Details</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Nov 17, 2023</th>
+<td class="px-6 py-4">09:00 AM</td>
+<td class="px-6 py-4">03:30 PM</td>
+<td class="px-6 py-4">6h 30m</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-blue-500/10 text-blue-500 text-xs font-medium px-2.5 py-0.5 rounded-full">Half Day</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">View Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<nav aria-label="Table navigation" class="flex items-center justify-between p-4">
+<span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900 dark:text-white">1-5</span> of <span class="font-semibold text-gray-900 dark:text-white">100</span></span>
+<ul class="inline-flex -space-x-px text-sm h-8">
+<li>
+<a class="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">Previous</a>
+</li>
+<li>
+<a class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">1</a>
+</li>
+<li>
+<a class="flex items-center justify-center px-3 h-8 leading-tight text-primary bg-primary/10 border border-primary hover:bg-primary/20 hover:text-primary-dark dark:bg-gray-700 dark:border-gray-600 dark:text-white" href="#">2</a>
+</li>
+<li>
+<a class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">3</a>
+</li>
+<li>
+<a class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" href="#">Next</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body>
+<script src="hr-data.js"></script>
+<script src="shared-nav.js"></script>
+</html>

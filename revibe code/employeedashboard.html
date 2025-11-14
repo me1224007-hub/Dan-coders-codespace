@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manav Sampada UP - Employee Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#135bec",
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+          },
+          fontFamily: {
+            "display": ["Public Sans", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark">
+<div id="shared-header-container"></div>
+<div class="relative flex h-auto min-h-screen w-full flex-col font-display group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<main class="px-6 sm:px-10 lg:px-20 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-7xl flex-1">
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex min-w-72 flex-col gap-2">
+<div class="flex items-center gap-4">
+  <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold" id="user-avatar">U</div>
+  <div>
+    <p id="user-fullname" class="text-[#111318] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Welcome</p>
+    <p class="text-[#616f89] dark:text-gray-300 text-base font-normal leading-normal">Here is a summary of your HRMS portal.</p>
+  </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4">
+<div class="lg:col-span-2">
+<div class="flex flex-col items-stretch justify-start rounded-xl @xl:flex-row @xl:items-start shadow-[0_0_4px_rgba(0,0,0,0.1)] bg-white dark:bg-[#182133]">
+<div class="w-full @xl:w-1/3 bg-center bg-no-repeat aspect-video @xl:aspect-square bg-cover rounded-l-xl" data-alt="Abstract gradient illustration representing actions" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA-rD-lD9PCafdHb8BcLclsNXjAp5fnCyqvdw-h96fWIxBnYzJYw12BndJWGwtsrlpEH7W1d8h6e-kDJ_rU7ucn8nyzIaxpwsLYwrZCov75bCUnetwQH6DQrPAWE7BxRIPxHIFk2o7hyv4_8duZ9tbr0kIwYQNJPajQbNZgTXWbWczkrCXUAsB_yuXo0ZMGlhvGmkHvioapKqxf7jsck2xd8RDTgQWQRpMaW8_ZwcJI-OH8vAux1D6T57Ctg9SJBmreYLxOPE2AHiE");'></div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-2 p-6">
+<p class="text-[#616f89] dark:text-gray-300 text-sm font-normal leading-normal">Pending Actions</p>
+<p class="text-[#111318] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex items-center gap-2">You have 3 pending actions <span class="text-sm font-medium text-white bg-[#FF9933] rounded-full px-2 py-0.5">High Priority</span></p>
+<p class="text-[#616f89] dark:text-gray-300 text-base font-normal leading-normal mt-1">Review and take action on leave approvals and detail verifications.</p>
+<div class="flex items-center gap-3 justify-end mt-4">
+<button onclick="location.href='adminpanel.html'" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal">
+<span class="truncate">View All Actions</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#182133] rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)] p-6">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-4">Personal Details</h3>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between">
+<span class="text-[#616f89] dark:text-gray-300">Employee Code:</span>
+<span class="text-[#111318] dark:text-white font-medium">UP123456</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#616f89] dark:text-gray-300">Department:</span>
+<span class="text-[#111318] dark:text-white font-medium">Education</span>
+</div>
+<div class="flex justify-between">
+<span class="text-[#616f89] dark:text-gray-300">Current Posting:</span>
+<span class="text-[#111318] dark:text-white font-medium">Lucknow</span>
+</div>
+</div>
+<a class="text-primary text-sm font-medium mt-4 inline-block" href="#">View Full Profile →</a>
+</div>
+<div class="lg:col-span-2 bg-white dark:bg-[#182133] rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)] p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Attendance Summary (October)</h3>
+<a class="text-primary text-sm font-medium" href="attendancemanagement.html">View Calendar</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+<div class="bg-background-light dark:bg-background-dark/60 p-4 rounded-lg">
+<p class="text-3xl font-bold text-[#111318] dark:text-white">22</p>
+<p class="text-sm text-[#616f89] dark:text-gray-300">Present</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark/60 p-4 rounded-lg">
+<p class="text-3xl font-bold text-[#111318] dark:text-white">1</p>
+<p class="text-sm text-[#616f89] dark:text-gray-300">Absent</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark/60 p-4 rounded-lg">
+<p class="text-3xl font-bold text-[#111318] dark:text-white">2</p>
+<p class="text-sm text-[#616f89] dark:text-gray-300">On Leave</p>
+</div>
+<div class="bg-background-light dark:bg-background-dark/60 p-4 rounded-lg">
+<p class="text-3xl font-bold text-[#111318] dark:text-white">4</p>
+<p class="text-sm text-[#616f89] dark:text-gray-300">Holidays</p>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#182133] rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)] p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-[#111318] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Notices &amp; Announcements</h3>
+<a class="text-primary text-sm font-medium" href="#">View All</a>
+</div>
+<div class="space-y-4">
+<div>
+<p class="font-medium text-[#111318] dark:text-white">DA hike announced for state employees.</p>
+<p class="text-xs text-[#616f89] dark:text-gray-300">Oct 25, 2023</p>
+</div>
+<hr class="border-gray-200 dark:border-gray-700"/>
+<div>
+<p class="font-medium text-[#111318] dark:text-white">Guidelines for annual performance review.</p>
+<p class="text-xs text-[#616f89] dark:text-gray-300">Oct 22, 2023</p>
+</div>
+<hr class="border-gray-200 dark:border-gray-700"/>
+<div>
+<p class="font-medium text-[#111318] dark:text-white">Holiday declaration for Diwali festival.</p>
+<p class="text-xs text-[#616f89] dark:text-gray-300">Oct 19, 2023</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4">
+<h2 class="text-[#111318] dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Quick Links</h2>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4">
+<a class="flex flex-col gap-3 pb-3 p-4 bg-white dark:bg-[#182133] rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-200" href="leaveapplication.html">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Icon representing a service book" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGiS9phi2Gs4Skx4DThXzkqZ72UHVJnB7y3Au0Dwvny2r-ZCV7iNLt14bM6zYif_io-hJ_ZE1LhKeGyY5czlJZ4ScQSwUkevQQA7UijXaP5GnYGEh8YYYxkPBk7a0rLaVX2y7XdWvoxVvfpTrQYVgwRBye2UpAK963qJh6irGCaquV2zmQC_7D5EG8sWXoMezaAZjL8DbtdJUB-sU5s64T5uBo9JsUW9_pf56RAK5UuKr0G3dtX7ubESRkS4kxA5KudK-sXVBjHV8");'></div>
+<div>
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal">View Service Book</p>
+<p class="text-[#616f89] dark:text-gray-300 text-sm font-normal leading-normal">Access your complete service record.</p>
+</div>
+</a>
+<a class="flex flex-col gap-3 pb-3 p-4 bg-white dark:bg-[#182133] rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-200" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Icon representing applying for leave" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUqpzI4fzSJ_7mYI_WMQ8nNVmfwBkrN9CaR2ufKrPGpOgIFEYr_4LidnjMc0JhFRc2-ySf0ZPAPg5MCzs7wT_Y9L5mVWmds6trzgVr4pDN7lRd0jV1YNvrRXWR4h54cphy-zJ7BPyJED3PY6ipp1pmZaFu89ImnOTu4LVIav4nAnN6bu1-SPclMbmYLLFUTzcYKudFBg0O1529wBRcZ0BXWjqAK_sgqsGK5NyTk-SKYJwOWtW8x3S8Cls1831hrSqMIogWDA1ECG8");'></div>
+<div>
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal">Apply for Leave</p>
+<p class="text-[#616f89] dark:text-gray-300 text-sm font-normal leading-normal">Request time off from work.</p>
+</div>
+</a>
+<a class="flex flex-col gap-3 pb-3 p-4 bg-white dark:bg-[#182133] rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-200" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Icon representing downloading a payslip" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTlah2EzTEKB4kpJVjV7XZ7Nx-1Pls87xoSrU1ISpiCb-ciuMNon66VLEZS303H_9F9hBk9xfqs9hXv8DGxzrJEUvovy6ymXEdoYjSYUsbEUkkDbftLz56RaX4UP5tvcx4gUpWgMU3S0oIFZrCGAtgxRGZbXBkNM-vnog8c1maLjpG6fz5DeC36nZZTvsnObbGbGhKoSSHkoUTo0vHAPpmb8aquPzBE5TdKYI6a8d7VKa7i2Y4tEgFshT90T4P_VCXMa11J0K0Tso");'></div>
+<div>
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal">Download Payslip</p>
+<p class="text-[#616f89] dark:text-gray-300 text-sm font-normal leading-normal">Get your monthly salary slip.</p>
+</div>
+</a>
+<a class="flex flex-col gap-3 pb-3 p-4 bg-white dark:bg-[#182133] rounded-xl shadow-[0_0_4px_rgba(0,0,0,0.1)] hover:shadow-lg transition-shadow duration-200" href="#">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Icon representing a tour or travel request" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNZxk4xzxp-FsnPvjDBwW0n9Z0poMD5sRL3p351gn8QuqCxqTdsp-boYYCd5k4cFRwWSOpctbRVpFnsHA3_MyA1PPGna4nOjtOhQIOe3eSroGO1vMy13I__k7Sevxeh7_qYZ4Hda3kbcx1P0iDYZeh3zpBGojMD7pLEDxf-_AW-c9s6upcBJwpjbsVtHlqLva0FCe2AuCPFWxZ8dmOEBc61drImtI0KKMI7-pEsB1IweHTRLwpWNRFZVu2M2agkscSywASFJngEko");'></div>
+<div>
+<p class="text-[#111318] dark:text-white text-base font-medium leading-normal">Submit Tour Request</p>
+<p class="text-[#616f89] dark:text-gray-300 text-sm font-normal leading-normal">File a tour or travel request.</p>
+</div>
+</a>
+</div>
+      <!-- HR Demo Card -->
+      <section id="hr-demo" class="mt-6 bg-white shadow rounded p-4 max-w-7xl mx-auto">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-medium">HR Demo</h2>
+          <div>
+            <button id="btn-gen-slip" class="px-3 py-1 bg-blue-600 text-white rounded">Generate Salary Slip</button>
+            <button id="btn-add-promo" class="ml-2 px-3 py-1 bg-green-600 text-white rounded">Add Promotion</button>
+          </div>
+        </div>
+
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="md:col-span-1">
+            <h3 class="font-semibold">Payroll Summary</h3>
+            <div id="payroll-summary" class="mt-2 text-sm text-gray-700">
+              <p class="text-gray-500">No data</p>
+            </div>
+          </div>
+          <div class="md:col-span-1">
+            <h3 class="font-semibold">Salary Slips</h3>
+            <ul id="slips-list" class="mt-2 list-none text-sm text-gray-700 space-y-2"></ul>
+          </div>
+          <div class="md:col-span-1">
+            <h3 class="font-semibold">Promotions</h3>
+            <ul id="promos-list" class="mt-2 list-none text-sm text-gray-700 space-y-2"></ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+</div>
+</body>
+<script src="hr-data.js"></script>
+<script src="shared-nav.js"></script>
+<!-- jsPDF and html2canvas for client-side PDF export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<style>
+  /* Simple modal centering */
+  .demo-modal { display:none; }
+  .demo-modal.open { display:flex; }
+</style>
+<div id="demo-modal" class="demo-modal fixed inset-0 hidden items-center justify-center bg-black bg-opacity-50 z-40">
+  <div class="bg-white dark:bg-[#0b1220] max-w-2xl w-full rounded p-4">
+    <div class="flex justify-between items-center">
+      <h3 id="modal-title" class="text-lg font-semibold">Details</h3>
+      <button id="modal-close" class="text-gray-600">Close</button>
+    </div>
+    <pre id="modal-body" class="mt-2 text-sm text-gray-800 max-h-72 overflow-auto"></pre>
+  </div>
+</div>
+
+<script>
+  // Enhanced HR Demo handlers
+  (function(){
+    function setUserName(){
+      const user = HR.currentUser();
+      const el = document.getElementById('user-fullname');
+      const avatar = document.getElementById('user-avatar');
+      if(!el) return;
+      if(user){
+        el.textContent = user.fullName || user.employeeId;
+        if(avatar){
+          const initials = (user.fullName||'U').split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+          avatar.textContent = initials;
+          // set a colorful gradient based on user ID hash
+          const colors = ['from-blue-400 to-blue-600', 'from-green-400 to-green-600', 'from-purple-400 to-purple-600', 'from-pink-400 to-pink-600'];
+          const idx = (user.employeeId.charCodeAt(user.employeeId.length-1) || 0) % colors.length;
+          avatar.className = 'w-16 h-16 bg-gradient-to-br ' + colors[idx] + ' rounded-full flex items-center justify-center text-white text-2xl font-bold';
+        }
+      } else {
+        el.textContent = 'Welcome';
+        if(avatar) avatar.textContent = 'U';
+      }
+    }
+
+    function formatCurrency(n){ return '₹' + Number(n||0).toLocaleString(); }
+
+    function refreshLists(){
+      const user = HR.currentUser();
+      if(!user) return;
+      // payroll summary
+      const payroll = HR.getPayrollForEmployee(user.employeeId) || [];
+      const gross = payroll.reduce((s,p)=>s + (Number(p.grossPay)||0),0);
+      const net = payroll.reduce((s,p)=>s + (Number(p.netPay)||0),0);
+      const payrollEl = document.getElementById('payroll-summary');
+      payrollEl.innerHTML = payroll.length ? `<p class="font-medium">Records: ${payroll.length}</p><p>Gross: ${formatCurrency(gross)}</p><p>Net: ${formatCurrency(net)}</p>` : '<p class="text-gray-500">No payroll records</p>';
+
+      // salary slips
+      const slips = HR.getSalarySlips(user.employeeId) || [];
+      const slipsList = document.getElementById('slips-list');
+      slipsList.innerHTML = '';
+      if(slips.length){
+        slips.slice().reverse().forEach(s=>{
+          const li = document.createElement('li');
+          li.className = 'flex items-center justify-between bg-background-light dark:bg-background-dark/50 p-2 rounded';
+          const left = document.createElement('div');
+          left.innerHTML = `<div class="font-medium">${s.id}</div><div class="text-xs text-gray-500">${s.effectiveDate || s.createdAt}</div>`;
+          const right = document.createElement('div');
+          // provide View + JSON/CSV/PDF buttons
+          right.innerHTML = `
+            <button data-id="${s.id}" class="view-slip px-2 py-1 text-sm bg-white border rounded mr-2">View</button>
+            <button data-id="${s.id}" class="download-json px-2 py-1 text-sm bg-gray-100 border rounded mr-2">JSON</button>
+            <button data-id="${s.id}" class="download-csv px-2 py-1 text-sm bg-gray-100 border rounded mr-2">CSV</button>
+            <button data-id="${s.id}" class="download-pdf px-2 py-1 text-sm bg-primary text-white rounded">PDF</button>
+          `;
+          li.appendChild(left); li.appendChild(right);
+          slipsList.appendChild(li);
+        });
+      } else {
+        slipsList.innerHTML = '<li class="text-gray-500">No salary slips</li>';
+      }
+
+      // promotions
+      const promos = HR.getPromotions(user.employeeId) || [];
+      const promosList = document.getElementById('promos-list');
+      promosList.innerHTML = '';
+      if(promos.length){
+        promos.slice().reverse().forEach(p=>{
+          const li = document.createElement('li');
+          li.className = 'bg-background-light dark:bg-background-dark/50 p-2 rounded';
+          li.innerHTML = `<div class="font-medium">${p.id}</div><div class="text-xs text-gray-500">${p.afterPromotion?.designation || p.title || 'Promotion'} • ${new Date(p.appliedAt||p.createdAt||Date.now()).toLocaleDateString()}</div>`;
+          promosList.appendChild(li);
+        });
+      } else {
+        promosList.innerHTML = '<li class="text-gray-500">No promotions</li>';
+      }
+
+      attachSlipButtons();
+    }
+
+    function attachSlipButtons(){
+      document.querySelectorAll('.view-slip').forEach(btn=>{
+        btn.onclick = function(){
+          const id = this.getAttribute('data-id');
+          const user = HR.currentUser();
+          const slip = (HR.getSalarySlips(user.employeeId)||[]).find(s=>s.id===id);
+          if(!slip) return alert('Slip not found');
+          showModal('Salary Slip ' + slip.id, JSON.stringify(slip, null, 2));
+        };
+      });
+      // JSON download (kept for compatibility)
+      document.querySelectorAll('.download-json').forEach(btn=>{
+        btn.onclick = function(){
+          const id = this.getAttribute('data-id');
+          const user = HR.currentUser();
+          const slip = (HR.getSalarySlips(user.employeeId)||[]).find(s=>s.id===id);
+          if(!slip) return alert('Slip not found');
+          const blob = new Blob([JSON.stringify(slip, null, 2)], {type: 'application/json'});
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url; a.download = (slip.id||'salary-slip') + '.json';
+          document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+        };
+      });
+
+      // CSV download
+      document.querySelectorAll('.download-csv').forEach(btn=>{
+        btn.onclick = function(){
+          const id = this.getAttribute('data-id');
+          const user = HR.currentUser();
+          const slip = (HR.getSalarySlips(user.employeeId)||[]).find(s=>s.id===id);
+          if(!slip) return alert('Slip not found');
+          function objectToCSV(obj){
+            const rows = [];
+            function recurse(o, prefix){
+              Object.keys(o||{}).forEach(k=>{
+                const v = o[k];
+                const key = prefix ? prefix + '.' + k : k;
+                if(v && typeof v === 'object' && !Array.isArray(v)) recurse(v, key);
+                else rows.push([key, Array.isArray(v) ? JSON.stringify(v) : String(v==null? '': v)]);
+              });
+            }
+            recurse(obj, '');
+            const header = 'Key,Value\r\n';
+            const body = rows.map(r=>`"${r[0].replace(/"/g,'""')}","${r[1].replace(/"/g,'""')}"`).join('\r\n');
+            return header + body;
+          }
+          const csv = objectToCSV(slip);
+          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url; a.download = (slip.id||'salary-slip') + '.csv';
+          document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+        };
+      });
+
+      // PDF download (formatted payslip)
+      document.querySelectorAll('.download-pdf').forEach(btn=>{
+        btn.onclick = function(){
+          const id = this.getAttribute('data-id');
+          const user = HR.currentUser();
+          const slip = (HR.getSalarySlips(user.employeeId)||[]).find(s=>s.id===id);
+          if(!slip) return alert('Slip not found');
+          // try to locate payroll details
+          let payroll = null;
+          if(slip.payrollId){
+            payroll = HR.getPayrollForEmployee(user.employeeId).find(p=>p.id===slip.payrollId);
+          }
+          if(!payroll){
+            // fallback: pick latest payroll record
+            const all = HR.getPayrollForEmployee(user.employeeId) || [];
+            payroll = all.length ? all[all.length-1] : null;
+          }
+
+          // build formatted HTML payslip
+          const wrapper = document.createElement('div');
+          wrapper.style.width = '800px';
+          wrapper.style.padding = '20px';
+          wrapper.style.fontFamily = 'Public Sans, Arial, sans-serif';
+          const companyLogo = 'admin-images.jpg';
+          const earningsRows = [];
+          let grossVal = payroll ? Number(payroll.grossPay || 0) : 0;
+          let netVal = payroll ? Number(payroll.netPay || 0) : 0;
+          const deductionsObj = payroll && payroll.deductions ? payroll.deductions : {};
+          let deductionsTotal = 0;
+          Object.keys(deductionsObj).forEach(k=>{ deductionsTotal += Number(deductionsObj[k]||0); });
+
+          wrapper.innerHTML = `
+            <div style="border:1px solid #e5e7eb;padding:22px;border-radius:6px;color:#111;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+                <div style="display:flex;align-items:center;gap:12px;">
+                  <img src="${companyLogo}" alt="logo" style="height:56px;object-fit:cover;border-radius:6px;"/>
+                  <div>
+                    <div style="font-size:18px;font-weight:700;">Manav Sampada UP</div>
+                    <div style="font-size:12px;color:#6b7280;">Employee Payslip</div>
+                  </div>
+                </div>
+                <div style="text-align:right;font-size:12px;color:#6b7280;">Generated: ${new Date().toLocaleString()}</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:12px;gap:12px;">
+                <div style="flex:1;">
+                  <div style="font-size:13px;margin-bottom:4px;"><strong>Employee</strong>: ${user.fullName || user.employeeId}</div>
+                  <div style="font-size:13px;margin-bottom:4px;"><strong>Employee ID</strong>: ${user.employeeId}</div>
+                  <div style="font-size:13px;margin-bottom:4px;"><strong>Designation</strong>: ${user.jobTitle || ''}</div>
+                </div>
+                <div style="flex:1;text-align:right;">
+                  <div style="font-size:13px;margin-bottom:4px;"><strong>Period</strong>: ${slip.effectiveDate || ''}</div>
+                  <div style="font-size:13px;margin-bottom:4px;"><strong>Payslip ID</strong>: ${slip.id}</div>
+                </div>
+              </div>
+
+              <table style="width:100%;border-collapse:collapse;margin-bottom:12px;font-size:13px;">
+                <thead>
+                  <tr>
+                    <th style="text-align:left;padding:8px;border-bottom:1px solid #eee;">Earnings</th>
+                    <th style="text-align:right;padding:8px;border-bottom:1px solid #eee;">Amount</th>
+                    <th style="text-align:left;padding:8px;border-bottom:1px solid #eee;">Deductions</th>
+                    <th style="text-align:right;padding:8px;border-bottom:1px solid #eee;">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;">Basic + Allowances</td>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;text-align:right;">${grossVal ? '₹' + grossVal.toLocaleString() : '-'}</td>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;">
+                      ${Object.keys(deductionsObj).length ? Object.keys(deductionsObj).map(k=>`<div>${k}</div>`).join('') : '-'}
+                    </td>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;text-align:right;">
+                      ${Object.keys(deductionsObj).length ? Object.keys(deductionsObj).map(k=>`<div>₹${Number(deductionsObj[k]||0).toLocaleString()}</div>`).join('') : '-'}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;font-weight:700;">Gross Pay</td>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;text-align:right;font-weight:700;">${grossVal ? '₹' + grossVal.toLocaleString() : '-'}</td>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;font-weight:700;">Total Deductions</td>
+                    <td style="padding:8px;border-top:1px solid #f3f4f6;text-align:right;font-weight:700;">${deductionsTotal ? '₹' + deductionsTotal.toLocaleString() : '-'}</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="padding:8px;border-top:1px solid #eee;font-size:15px;font-weight:800;">Net Pay</td>
+                    <td colspan="2" style="padding:8px;border-top:1px solid #eee;text-align:right;font-size:15px;font-weight:800;">${netVal ? '₹' + netVal.toLocaleString() : '-'}</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div style="display:flex;justify-content:space-between;margin-top:22px;gap:12px;">
+                <div style="flex:1;text-align:left;">
+                  <div style="height:48px;border-top:1px solid #e6e6e6;margin-top:18px;padding-top:8px;font-size:12px;color:#6b7280;">Employee Signature</div>
+                </div>
+                <div style="flex:1;text-align:right;">
+                  <div style="height:48px;border-top:1px solid #e6e6e6;margin-top:18px;padding-top:8px;font-size:12px;color:#6b7280;">Authorized Signatory</div>
+                </div>
+              </div>
+            </div>
+          `;
+          document.body.appendChild(wrapper);
+          // generate PDF using jsPDF html
+          try{
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({unit:'pt', format:'a4'});
+            doc.html(wrapper, {
+              callback: function(pdf){
+                pdf.save((slip.id||'salary-slip') + '.pdf');
+                wrapper.remove();
+              },
+              x: 20,
+              y: 20,
+              html2canvas: { scale: 1 }
+            });
+          }catch(e){
+            wrapper.remove();
+            alert('PDF generation failed. See console.');
+            console.error(e);
+          }
+        };
+      });
+    }
+
+    function showModal(title, body){
+      const modal = document.getElementById('demo-modal');
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-body').textContent = body;
+      modal.classList.remove('hidden'); modal.classList.add('open');
+    }
+
+    function closeModal(){
+      const modal = document.getElementById('demo-modal');
+      modal.classList.add('hidden'); modal.classList.remove('open');
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      setUserName();
+      const btnGen = document.getElementById('btn-gen-slip');
+      const btnPromo = document.getElementById('btn-add-promo');
+      const modalClose = document.getElementById('modal-close');
+      const modal = document.getElementById('demo-modal');
+
+      if(modalClose) modalClose.addEventListener('click', closeModal);
+      if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+
+      if(btnGen){
+        btnGen.addEventListener('click', function(){
+          const user = HR.currentUser();
+          if(!user){ alert('Please login first.'); return; }
+          // create payroll record and salary slip
+          const payroll = HR.addPayrollRecord({ employeeId: user.employeeId, periodStart: new Date().toISOString(), periodEnd: new Date().toISOString(), grossPay: 50000, deductions: { tax:5000 }, netPay: 45000 });
+          const slip = HR.createSalarySlip(user.employeeId, { effectiveDate: new Date().toISOString(), payrollId: payroll.id, notes: 'Generated from demo' });
+          alert('Created slip: ' + slip.id);
+          refreshLists();
+        });
+      }
+      if(btnPromo){
+        btnPromo.addEventListener('click', function(){
+          const user = HR.currentUser();
+          if(!user){ alert('Please login first.'); return; }
+          const promo = HR.addPromotion({ employeeId: user.employeeId, beforePromotion: { designation: user.jobTitle }, afterPromotion: { designation: user.jobTitle + ' (Sr)' }, approvals: { hr: 'demo' }, appliedAt: new Date().toISOString() });
+          alert('Added promotion: ' + promo.id);
+          setUserName();
+          refreshLists();
+        });
+      }
+      refreshLists();
+    });
+  })();
+</script>
+</html>

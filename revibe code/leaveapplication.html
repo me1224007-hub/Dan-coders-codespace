@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Apply for Leave - Manav Sampada UP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input[type="radio"] {
+           --radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill='%23135bec' xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+        }
+    </style>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+              "success": "#2E8540",
+              "error": "#D32F2F"
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div id="shared-header-container"></div>
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Main Content -->
+<main class="flex-grow">
+<div class="max-w-4xl mx-auto py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+<!-- PageHeading -->
+<div class="mb-8">
+<p class="text-4xl font-black text-gray-900 dark:text-white tracking-tight">Apply for Leave</p>
+<p class="mt-2 text-base text-gray-500 dark:text-gray-400">Complete the following steps to submit your leave application.</p>
+</div>
+<!-- ProgressBar -->
+<div class="mb-10">
+<div class="flex items-center">
+<div class="flex flex-col items-center">
+<div class="flex items-center justify-center size-8 rounded-full bg-primary text-white font-bold">1</div>
+<p class="mt-2 text-sm font-medium text-primary">Leave Details</p>
+</div>
+<div class="flex-auto border-t-2 border-primary mx-4"></div>
+<div class="flex flex-col items-center opacity-50">
+<div class="flex items-center justify-center size-8 rounded-full bg-gray-300 text-gray-600 font-bold">2</div>
+<p class="mt-2 text-sm font-medium text-gray-500">Add Documents</p>
+</div>
+<div class="flex-auto border-t-2 border-gray-300 mx-4"></div>
+<div class="flex flex-col items-center opacity-50">
+<div class="flex items-center justify-center size-8 rounded-full bg-gray-300 text-gray-600 font-bold">3</div>
+<p class="mt-2 text-sm font-medium text-gray-500">Review &amp; Submit</p>
+</div>
+</div>
+</div>
+<!-- Form Section Card -->
+<div id="leave-form" class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-6 sm:p-8" style="position:relative;">
+      <!-- Auth overlay shown when user is not logged in -->
+      <div id="auth-overlay" class="hidden absolute inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div class="bg-white dark:bg-gray-900 rounded-lg p-6 max-w-sm text-center">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Please sign in</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">You must be signed in to view the calendar and submit leave requests.</p>
+          <div class="flex justify-center gap-3">
+            <button id="go-to-login" class="px-4 py-2 bg-primary text-white rounded">Go to Login</button>
+            <button id="overlay-refresh" class="px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded">Check Auth</button>
+          </div>
+        </div>
+      </div>
+<!-- TitleText -->
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight pb-6 border-b border-gray-200 dark:border-gray-700">Step 1: Select Leave Type &amp; Dates</h1>
+<div class="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-6">
+<!-- RadioList for Leave Type -->
+<div class="sm:col-span-2">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Select Leave Type</label>
+<div class="flex flex-col gap-3">
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-300 dark:border-gray-700 p-4 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<input checked="" class="h-5 w-5 border-2 border-gray-300 dark:border-gray-600 bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 focus:ring-offset-white dark:focus:ring-offset-gray-900" name="leave_type" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-sm font-medium text-gray-900 dark:text-white">Casual Leave</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">For short-term personal needs</p>
+</div>
+</label>
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-300 dark:border-gray-700 p-4 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<input class="h-5 w-5 border-2 border-gray-300 dark:border-gray-600 bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 focus:ring-offset-white dark:focus:ring-offset-gray-900" name="leave_type" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-sm font-medium text-gray-900 dark:text-white">Medical Leave</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">For health-related reasons</p>
+</div>
+</label>
+<label class="flex cursor-pointer items-center gap-4 rounded-lg border border-gray-300 dark:border-gray-700 p-4 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<input class="h-5 w-5 border-2 border-gray-300 dark:border-gray-600 bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50 focus:ring-offset-white dark:focus:ring-offset-gray-900" name="leave_type" type="radio"/>
+<div class="flex grow flex-col">
+<p class="text-sm font-medium text-gray-900 dark:text-white">Earned Leave</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Leave earned over a period of service</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Date Range Picker -->
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="start-date">From Date</label>
+<div class="mt-1 relative">
+<input class="block w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" id="start-date" name="start-date" type="date" value="2023-10-26"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="end-date">To Date</label>
+<div class="mt-1 relative">
+<input class="block w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" id="end-date" name="end-date" type="date" value="2023-10-28"/>
+</div>
+<p class="mt-2 text-xs text-error">End date cannot be before start date.</p>
+</div>
+<div class="sm:col-span-2">
+<p class="text-base font-medium text-gray-700 dark:text-gray-300">Total days: <span class="text-primary font-bold">3</span></p>
+</div>
+<!-- Text Input -->
+<div class="sm:col-span-2">
+<label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="reason">Reason for Leave</label>
+<div class="mt-1">
+<textarea class="block w-full p-4 rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:ring-primary focus:border-primary sm:text-sm" id="reason" name="reason" placeholder="Please provide a brief reason for your leave request..." rows="4"></textarea>
+</div>
+</div>
+<!-- Toggle Switch with Contextual Help -->
+<div class="sm:col-span-2 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300" for="station-leave">Station Leave Required?</label>
+<div class="relative group">
+<span class="material-symbols-outlined text-base text-gray-400 cursor-pointer">info</span>
+<div class="absolute bottom-full mb-2 w-64 p-3 bg-gray-800 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                        Select this if you will be leaving your designated work city/town during the leave period.
+                                        <div class="absolute left-1/2 -translate-x-1/2 top-full w-0 h-0 border-x-4 border-x-transparent border-t-4 border-t-gray-800"></div>
+</div>
+</div>
+</div>
+<button aria-checked="false" class="bg-gray-200 dark:bg-gray-700 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-gray-900" role="switch" type="button">
+<span class="translate-x-0 dark:translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white dark:bg-gray-400 shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex justify-between items-center">
+<button class="px-6 py-3 rounded-lg text-sm font-semibold text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700" type="button">
+                            Save as Draft
+                        </button>
+<button id="btn-next-step" class="px-8 py-3 rounded-lg text-sm font-semibold text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-gray-900 flex items-center gap-2" type="button">
+                            Next Step
+                            <span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body>
+<script src="hr-data.js"></script>
+<script src="shared-nav.js"></script>
+<script>
+  (function(){
+    function setAuthState(){
+      const overlay = document.getElementById('auth-overlay');
+      const form = document.getElementById('leave-form');
+      if(!form || !overlay) return;
+      const controls = Array.from(form.querySelectorAll('input, textarea, select, button'));
+      const user = window.HR && HR.currentUser ? HR.currentUser() : null;
+      if(!user){
+        overlay.classList.remove('hidden'); overlay.classList.add('flex');
+        controls.forEach(c=>{ if(!overlay.contains(c)) c.disabled = true; });
+      } else {
+        overlay.classList.add('hidden'); overlay.classList.remove('flex');
+        controls.forEach(c=> c.disabled = false);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+      const loginBtn = document.getElementById('go-to-login');
+      const refreshBtn = document.getElementById('overlay-refresh');
+      if(loginBtn) loginBtn.addEventListener('click', ()=> location.href = 'loginpage.new.html');
+      if(refreshBtn) refreshBtn.addEventListener('click', setAuthState);
+
+      const next = document.getElementById('btn-next-step');
+      if(next) next.addEventListener('click', function(){
+        const user = window.HR && HR.currentUser ? HR.currentUser() : null;
+        if(!user){
+          alert('Please sign in to continue.');
+          setAuthState();
+          return;
+        }
+        // Optionally validate dates etc. before proceeding
+        location.href = 'employeedashboard.html';
+      });
+
+      // run initial auth check (HR should be available since hr-data.js is loaded)
+      setAuthState();
+    });
+  })();
+</script>
+</html>
